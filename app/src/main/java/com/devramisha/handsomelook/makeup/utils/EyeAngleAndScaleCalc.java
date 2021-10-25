@@ -8,9 +8,9 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author by dingdegao
- *         time 2017/9/22 14:49
- *         function: 眼睛的角度，缩放比计算
+ * @author by Md Ramish
+ *         time 2021/9
+ *         function: Eye angle, zoom ratio calculation
  */
 
 public class EyeAngleAndScaleCalc {
@@ -70,7 +70,6 @@ public class EyeAngleAndScaleCalc {
         return bgEyeAngle;
     }
 
-
     public Point getCenter(List<Point> list, int start, int end) {
         float x = 0.0f,y=0.0f;
         for(int i=start;i<=end;i++){
@@ -81,28 +80,31 @@ public class EyeAngleAndScaleCalc {
     }
 
     /**
-     * @param targetP1 缩放目标线段点p1
-     * @param targetP2 缩放目标线段点p2
-     * @param P1       待缩放线段点p1
-     * @param P2       待缩放线段点p2
-     * @return 水平高度比值
+     * @param targetP1 Zoom target line segment point p1
+     * @param targetP2 Zoom target line segment point p2
+     * @param P1        Line segment point to be scaled p1
+     * @param P2       Line segment point to be scaled p2
+     * @return Horizontal height ratio
      */
+
     public double computeScaleX(Point targetP1, Point targetP2, Point P1, Point P2) {
-        int targetLengthSquare = (targetP1.x - targetP2.x) * (targetP1.x - targetP2.x) + (targetP1.y - targetP2.y) * (targetP1.y - targetP2.y);
+        int targetLengthSquare = (targetP1.x - targetP2.x) * (targetP1.x - targetP2.x) +
+                (targetP1.y - targetP2.y) * (targetP1.y - targetP2.y);
         int sourceLengthSquare = (P1.x - P2.x) * (P1.x - P2.x) + (P1.y - P2.y) * (P1.y - P2.y);
         double scale = targetLengthSquare * 1.0 / sourceLengthSquare;
         return Math.sqrt(scale);
     }
 
     /**
-     * @param targetP1 缩放目标三角形顶点
-     * @param targetP2 缩放目标三角形顶点
-     * @param targetP3 缩放目标三角形顶点
-     * @param P1       待缩放三角形顶点
-     * @param P2       待缩放三角形顶点
-     * @param P3       待缩放三角形顶点
-     * @return 垂直高度比值
+     * @param targetP1 Zoom target triangle vertex
+     * @param targetP2 Zoom target triangle vertex
+     * @param targetP3 Zoom target triangle vertex
+     * @param P1       Vertex of triangle to be scaled
+     * @param P2       Vertex of triangle to be scaled
+     * @param P3       Vertex of triangle to be scaled
+     * @return Vertical height ratio
      */
+
     public double computeScaleY(Point targetP1, Point targetP2, Point targetP3, Point P1, Point P2, Point P3) {
         double targetHeight = getTriangleHeight(targetP1, targetP2, targetP3);
         double sourceHeight = getTriangleHeight(P1, P2, P3);
@@ -110,11 +112,12 @@ public class EyeAngleAndScaleCalc {
     }
 
     /**
-     * @param p1 三角形顶点
-     * @param p2 三角形顶点
-     * @param p3 三角形顶点
-     * @return 三角形顶点p3 到 p1,p3垂直高度
+     * @param p1 Triangle vertex
+     * @param p2 Triangle vertex
+     * @param p3 Triangle vertex
+     * @return Vertical height of triangle vertices p3 to p1,p3
      */
+
     public double getTriangleHeight(Point p1, Point p2, Point p3) {
         int a = p1.x;
         int b = p1.y;
@@ -122,24 +125,22 @@ public class EyeAngleAndScaleCalc {
         int d = p2.y;
         int e = p3.x;
         int f = p3.y;
-        //计算三角形面积
+        //Calculate the area of a triangle
         double S = (a * d + b * e + c * f - a * f - b * c - d * e) / 2;
         int lengthSquare = (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
         return Math.abs(2 * S / Math.sqrt(lengthSquare));
     }
 
-
     static double pi180 = 180 / Math.PI;
 
     public double getAngle(Point p1, Point p2, Point p3) {
-        double _cos1 = getCos(p1, p2, p3);//第一个点为顶点的角的角度的余弦值
+        double _cos1 = getCos(p1, p2, p3);//The first point is the cosine of the angle of the vertex
         return 90 - Math.acos(_cos1) * pi180;
     }
 
-
-    //获得三个点构成的三角形的 第一个点所在的角度的余弦值
+    //Obtain the cosine value of the angle at the first point of the triangle formed by three points
     public double getCos(Point p1, Point p2, Point p3) {
-        //获取第一个点与第2个点的距离
+        //Get the distance between the first point and the second point
         double length1_2 = getLength(p1, p2);
         double length1_3 = getLength(p1, p3);
         double length2_3 = getLength(p2, p3);
@@ -148,12 +149,13 @@ public class EyeAngleAndScaleCalc {
         return res;
     }
 
-
-    //获取坐标轴内两个点间的距离
+    //Get the distance between two points in the coordinate axis
     public double getLength(Point p1, Point p2) {
         double diff_x = Math.abs(p1.x - p2.x);
         double diff_y = Math.abs(p1.y - p2.y);
-        //两个点在 横纵坐标的差值与两点间的直线 构成直角三角形。length_pow等于该距离的平方
+        //The difference between the abscissa and ordinate of the two points
+        // and the straight line between the two points form a right triangle.
+        // length_pow is equal to the square of the distance
         double length_pow = Math.pow(diff_x, 2) + Math.pow(diff_y, 2);
         double sqrt = Math.sqrt(length_pow);
         return sqrt == 0?0.001f:(float) sqrt;

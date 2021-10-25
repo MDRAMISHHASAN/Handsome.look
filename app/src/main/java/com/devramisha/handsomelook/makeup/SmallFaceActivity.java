@@ -8,12 +8,13 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ding.makeup.beauty.SmallFaceView;
-import com.ding.makeup.utils.CommonShareBitmap;
+import com.devramisha.handsomelook.R;
+import com.devramisha.handsomelook.makeup.beauty.SmallFaceView;
+import com.devramisha.handsomelook.makeup.utils.CommonShareBitmap;
 
 /**
  * Developer :- Ramish
- * time:2021-08
+ * time:2021-10
  * function: default function
  */
 

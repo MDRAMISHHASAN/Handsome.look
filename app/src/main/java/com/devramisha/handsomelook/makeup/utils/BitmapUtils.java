@@ -4,12 +4,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
+import android.util.Log;
 
 import java.io.IOException;
 
 /**
- * author:DingDeGao
- * time:2019-08-07-10:42
+ * Developer: Md Ramish
+ * time:2021-10
  * function: default function
  */
 public class BitmapUtils {
@@ -22,8 +23,10 @@ public class BitmapUtils {
         try {
             return BitmapFactory.decodeStream(context.getAssets().open(name),new Rect(),options);
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            Log.i("BitmapUtils.java,", "getBitmapByAssetsName: " + e);
         }
+
         return null;
     }
 }

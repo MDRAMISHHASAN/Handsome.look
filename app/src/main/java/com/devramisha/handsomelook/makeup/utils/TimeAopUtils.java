@@ -2,7 +2,7 @@ package com.devramisha.handsomelook.makeup.utils;
 
 import android.util.Log;
 
-import com.ding.makeup.BuildConfig;
+import com.devramisha.handsomelook.BuildConfig;
 
 /**
  * author: Md Ramish
@@ -15,12 +15,13 @@ public class TimeAopUtils {
 
     public static void start(){
         startTime = System.currentTimeMillis();
+        Log.i("TimeAopUtils.java,start","Start Time" + startTime);
     }
 
     public static long end(String tag,String msgPre){
        long end = System.currentTimeMillis() - startTime;
        if(BuildConfig.DEBUG){
-           Log.i("TimeAopUtils.java -> end method",msgPre+"-time consuming:"+ end);
+           Log.i("TimeAopUtils.java.end",msgPre+"-time consuming:"+ end);
        }
        return end;
     }

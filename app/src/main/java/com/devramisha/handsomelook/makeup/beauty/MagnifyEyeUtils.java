@@ -3,7 +3,7 @@ package com.devramisha.handsomelook.makeup.beauty;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 
-import com.ding.makeup.utils.TimeAopUtils;
+import com.devramisha.handsomelook.makeup.utils.TimeAopUtils;
 
 /**
  * @author by Ramish

@@ -9,11 +9,11 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.Rect;
 
-import com.ding.makeup.draw.BlushDraw;
-import com.ding.makeup.draw.BrowDraw;
-import com.ding.makeup.draw.EyeDraw;
-import com.ding.makeup.draw.FoundationDraw;
-import com.ding.makeup.draw.LipDraw;
+import com.devramisha.handsomelook.makeup.draw.BlushDraw;
+import com.devramisha.handsomelook.makeup.draw.BrowDraw;
+import com.devramisha.handsomelook.makeup.draw.EyeDraw;
+import com.devramisha.handsomelook.makeup.draw.FoundationDraw;
+import com.devramisha.handsomelook.makeup.draw.LipDraw;
 
 import java.util.ArrayList;
 import java.util.List;

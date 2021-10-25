@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
 
-import com.amnix.skinsmoothness.AmniXSkinSmooth;
+import com.devramisha.handsomelook.skinsmoothness.AmniXSkinSmooth;
 
 /**
  * author:DingDeGao

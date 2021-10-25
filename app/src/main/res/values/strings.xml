@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Handsome.look</string>
+    <string name="magnify">Magnify</string>
+    <string name="smallFace">Small Face</string>
+    <string name="longLeg">Long legs</string>
+    <string name="compare">Compare</string>
 </resources>

@@ -7,9 +7,10 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ding.makeup.beauty.MagnifyEyeUtils;
-import com.ding.makeup.utils.CommonShareBitmap;
-import com.ding.makeup.utils.FacePoint;
+import com.devramisha.handsomelook.R;
+import com.devramisha.handsomelook.makeup.beauty.MagnifyEyeUtils;
+import com.devramisha.handsomelook.makeup.utils.CommonShareBitmap;
+import com.devramisha.handsomelook.makeup.utils.FacePoint;
 
 import java.util.Objects;
 

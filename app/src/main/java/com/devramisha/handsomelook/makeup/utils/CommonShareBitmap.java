@@ -3,8 +3,8 @@ package com.devramisha.handsomelook.makeup.utils;
 import android.graphics.Bitmap;
 
 /**
- * author:DingDeGao
- * time:2019-08-23-15:56
+ * Developer: Md Ramish
+ * time:2021-10
  * function: default function
  */
 public class CommonShareBitmap {

@@ -3,6 +3,7 @@ package com.devramisha.handsomelook.makeup.utils;
 import android.content.Context;
 import android.graphics.Path;
 import android.graphics.Point;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,19 +15,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * author:DingDeGao
- * time:2019-08-06-18:01
+ * Developer:Md Ramish
+ * time:2021-10
  * function: default function
  */
 public class FacePoint {
 
 
     /**
-     * face地址  https://www.faceplusplus.com.cn/dense-facial-landmarks/#demo
+     * faceaddress https://www.faceplusplus.com.cn/dense-facial-landmarks/#demo
      */
 
     /**
-     * 关键点说明: https://console.faceplusplus.com.cn/documents/55107022
+     * Key point description: https://console.faceplusplus.com.cn/documents/55107022
      */
     public static Path getMouthPath(String faceJson){
         try {
@@ -63,7 +64,7 @@ public class FacePoint {
                 inPath.lineTo(pointByJson.x,pointByJson.y);
             }
 
-            //取不同的地方
+            //Take a different place
             outPath.op(inPath, Path.Op.DIFFERENCE);
             return  outPath;
         } catch (JSONException e) {
@@ -147,8 +148,6 @@ public class FacePoint {
         return null;
     }
 
-
-
     public static Path getLeftEyeBrow(String faceJson){
         try {
             JSONObject jsonObject = new JSONObject(faceJson);
@@ -164,11 +163,10 @@ public class FacePoint {
             path.close();
             return  path;
         }catch (Exception e){
-            e.printStackTrace();
+            Log.i("FacePoint.java,getLeftEyeBrow:","getLeftEyeBrow:" + e);
         }
         return null;
     }
-
 
     public static Path landmark(String faceJson){
         JSONObject jsonObject = null;
@@ -197,7 +195,6 @@ public class FacePoint {
         return null;
 
     }
-
 
     public static List<Point> getLeftFacePoint(String faceJson){
         JSONObject jsonObject = null;
@@ -269,18 +266,16 @@ public class FacePoint {
 
         } catch (JSONException e) {
             e.printStackTrace();
+            Log.i("FacePoint.java,getBlush", "getBlush: "+ e);
         }
         return null;
 
     }
 
-
-
     public static Point getPointByJson(JSONObject jsonObject){
         Point point = new Point(jsonObject.optInt("x"),jsonObject.optInt("y"));
         return point;
     }
-
 
     public static String getFaceJson(Context context,String facePointJson){
         InputStream input = null;
@@ -296,13 +291,16 @@ public class FacePoint {
 
             return byteArrayOutputStream.toString();
         } catch (IOException e) {
-            e.printStackTrace();
+            //Log.i("FacePoint.java,getFaceJson", +e);
+           // Log.i(TAG, "getFaceJson: ");
+            Log.i("FacePoint.java,getFaceJson", "getFaceJson1: "+e);
+            //e.printStackTrace();
         }finally {
             if(input != null){
                 try {
                     input.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    Log.i("FacePoint.java,getFaceJson", "getFaceJson2: "+e);
                 }
             }
         }

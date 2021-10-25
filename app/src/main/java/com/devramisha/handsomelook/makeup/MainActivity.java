@@ -10,12 +10,13 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ding.makeup.beauty.MagnifyEyeUtils;
-import com.ding.makeup.utils.BitmapUtils;
-import com.ding.makeup.utils.CommonShareBitmap;
-import com.ding.makeup.utils.DrawUtils;
-import com.ding.makeup.utils.FacePoint;
-import com.ding.makeup.utils.MakeupBeautyUtils;
+import com.devramisha.handsomelook.R;
+import com.devramisha.handsomelook.makeup.beauty.MagnifyEyeUtils;
+import com.devramisha.handsomelook.makeup.utils.BitmapUtils;
+import com.devramisha.handsomelook.makeup.utils.CommonShareBitmap;
+import com.devramisha.handsomelook.makeup.utils.DrawUtils;
+import com.devramisha.handsomelook.makeup.utils.FacePoint;
+import com.devramisha.handsomelook.makeup.utils.MakeupBeautyUtils;
 
 import java.util.Objects;
 

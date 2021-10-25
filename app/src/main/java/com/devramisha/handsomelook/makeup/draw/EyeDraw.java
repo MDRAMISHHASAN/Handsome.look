@@ -11,8 +11,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
 
-import com.ding.makeup.utils.BitmapUtils;
-import com.ding.makeup.utils.EyeAngleAndScaleCalc;
+import com.devramisha.handsomelook.makeup.utils.BitmapUtils;
+import com.devramisha.handsomelook.makeup.utils.EyeAngleAndScaleCalc;
 
 import java.util.List;
 

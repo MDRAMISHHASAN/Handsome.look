@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ding.makeup.beauty.AdjustLegView;
-import com.ding.makeup.beauty.LongLegsUtils;
-import com.ding.makeup.beauty.SmallFaceView;
-import com.ding.makeup.utils.BitmapUtils;
+import com.devramisha.handsomelook.R;
+import com.devramisha.handsomelook.makeup.beauty.AdjustLegView;
+import com.devramisha.handsomelook.makeup.beauty.LongLegsUtils;
+import com.devramisha.handsomelook.makeup.beauty.SmallFaceView;
+import com.devramisha.handsomelook.makeup.utils.BitmapUtils;
 
 /**
  * Developer :- Ramish

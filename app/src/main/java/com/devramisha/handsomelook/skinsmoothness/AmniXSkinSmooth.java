@@ -9,7 +9,15 @@ public class AmniXSkinSmooth {
     private static ByteBuffer mByteBuffer = null;
 
     static {
-        System.loadLibrary("AmniXSkinSmooth");
+        try {
+            System.loadLibrary("AmniXSkinSmooth");
+        }
+        catch (Exception e)
+        {
+            Log.i("AmniXSkinSmooth.java,static","System.loadLibrary()" + e);
+        }
+
+
     }
 
     private static AmniXSkinSmooth mAmniXSkinSmooth = null;
@@ -18,8 +26,12 @@ public class AmniXSkinSmooth {
     }
 
     public static AmniXSkinSmooth getInstance() {
-        if (mAmniXSkinSmooth == null) mAmniXSkinSmooth = new AmniXSkinSmooth();
+        if (mAmniXSkinSmooth == null)
+            mAmniXSkinSmooth = new AmniXSkinSmooth();
+
+        Log.i("AmniXSkinSmooth.java,AmniXSkinSmooth","AmniXSkinSmooth" + mAmniXSkinSmooth);
         return mAmniXSkinSmooth;
+
     }
 
     public void startSkinSmoothness(float level) {
@@ -30,11 +42,13 @@ public class AmniXSkinSmooth {
     public void startSkinWhiteness(float level) {
         if (mByteBuffer == null) return;
         jniStartWhiteSkin(level);
+
     }
 
     public void startFullBeauty(float smoothLevel, float whileLevel) {
         if(mByteBuffer == null) return;
         jniStartFullBeauty(smoothLevel,whileLevel);
+        Log.i("AmniXSkinSmooth.java,jniStartFullBeauty","jniStartFullBeauty");
     }
 
     public void initSdk() {
